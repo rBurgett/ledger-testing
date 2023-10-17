@@ -144,7 +144,7 @@
       "react-app"
     ]
   },
-  "alias": {
-    "@ledgerhq/devices": "@ledgerhq/devices/lib-es"
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

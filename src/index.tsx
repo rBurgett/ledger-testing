@@ -1,13 +1,9 @@
-import { Buffer } from 'buffer';
 import 'core-js/actual';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/sakura-dark.css';
 import './index.css';
 import { App } from './app';
-
-// @ts-ignore
-window.Buffer = Buffer;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
