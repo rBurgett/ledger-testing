@@ -16,11 +16,11 @@ export const App = () => {
       listen((log) => console.log(log.type + ': ' + log.message));
       const appBtc = new AppBtc({transport});
       const { bitcoinAddress } = await appBtc.getWalletPublicKey(
-        // `44'/0'/0'/0/0`,
         `84'/0'/0'/0/4`,
         { verify: false, format: 'bech32'}
       );
       setBitcoinAddress(bitcoinAddress);
+      await transport.close();
     } catch(err: any) {
       console.error(err);
     }
@@ -34,6 +34,7 @@ export const App = () => {
       const appPokt = new AppPokt(transport);
       const signer = await appPokt.getSigner(`44'/635'/0'/0/0`);
       setPoktAddress(signer.getAddress());
+      await transport.close();
     } catch(err: any) {
       console.error(err);
     }
