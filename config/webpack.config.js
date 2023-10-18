@@ -336,6 +336,10 @@ module.exports = function (webpackEnv) {
           babelRuntimeRegenerator,
         ]),
       ],
+      fallback: {
+        stream: require.resolve('stream-browserify'),
+        crypto: require.resolve('crypto-browserify'),
+      },
     },
     module: {
       strictExportPresence: true,
